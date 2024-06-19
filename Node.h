@@ -10,14 +10,6 @@
 #pragma once
 #include "Error.h"
 
-/* Author: Nathan Metens
- *
- * This is the Node class that holds the data
- * and a pointer to the next node. The methods
- * are constructors, a destructor, setters, 
- * and getters for the data.
- */
-
 template <class TYPE>
 class Node {
 	public:

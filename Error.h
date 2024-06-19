@@ -8,7 +8,7 @@
  */
 
 #pragma once
-#include "String/String.h"
+#include "String.h"
 
 class Error {
 	public:

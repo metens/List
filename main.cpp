@@ -1,51 +1,47 @@
 
 /* Author: Nathan Metens
  *
- * This is the main file that runs tests for
- * the List class.
+ * This is the main method to test the list
+ * and String class methods.
  */
 
+#include "String.h"
 #include "List.h"
-#include "String/String.h"
 #include <iostream>
+#include <vector>
+using std::vector;
 using std::cout;
 using std::endl;
 
 int main() {
+	// Create String objects:
+	//String name = "Nathan";
+	String name1("Nathan");
+	String name2(name1);
+	String name3;
+	name2 = "Metens";
+	name3 = name1 + " " + name2; // Concatonate Strings
 
-	List<int> list;
+	// Outputing String objects:
+	cout << "name1: " << name1 << endl;
+	cout << "name2: " << name2 << endl;
+	cout << "name3: " << name3 << endl;
 
-	int arr[7] = {3, 5, 2, 9, 4, 1, 8};
-	for (int i=0; i<7; ++i)
-		list.insert(arr[i]);
+	name3 += " Emmanuel";
+	name3 += name2;
+	cout << name3 << endl;
 
-	cout << list;
+	List<String> list; // Creating a list object of type String
+	// Creating a vector of String objects:
+	vector<String> v = {"Moo", name1, name2, "Leah", "Sam"};
+	for (auto string: v) list.insert(string); // Adding Strings to list
+	cout << list << endl; // Display the list
 
-	List<int> list2(list);
-	cout << list2;
-
-	String name = "Nathan";
-	cout << name << endl;
-	String asdf = "asdf";
-	cout << asdf << endl;
-	name = asdf;
-	asdf = "Metens";
-	cout << name << endl;
-	String name2(asdf);
-	cout << name2 << endl;
-
-	String nathan = "Nathan " + name2;
-	String leah = asdf + " Leah";
-	cout << nathan << endl;
-	cout << leah << endl;
-	String names = nathan + leah;
-	cout << names << endl;
-
-	try {
-		cout << "List[6]: " << list[6] << endl;
-	} catch(Error e) {
-		e.display();
-	}
+	// Change the String at the corresponding index:
+	list[1] = "NATHAN";
+	list[3] = "SNIP";
+	cout << list[1] << endl; // Display the object at index 1
+	cout << list << endl;
 
 	return 0;
 }

@@ -1,4 +1,10 @@
 
+/* Author: Nathan Metens
+ *
+ * This is the implementation file for the
+ * String class:
+ */
+ 
 #include "String.h"
 #include <cstring>
 

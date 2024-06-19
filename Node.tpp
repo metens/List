@@ -13,7 +13,6 @@ Node<TYPE>::Node(TYPE data): data(data), next(nullptr) {}
 	
 template <typename TYPE>
 Node<TYPE>::~Node() {
-	data = 0;
 	if (next) next = nullptr;
 }
 
